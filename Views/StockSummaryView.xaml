@@ -1,0 +1,106 @@
+﻿<UserControl x:Class="FundManager.Views.StockSummaryView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FundManager.Views"
+             mc:Ignorable="d" 
+             xmlns:prism="clr-namespace:Microsoft.Practices.Prism.Mvvm;assembly=Microsoft.Practices.Prism.Mvvm.Desktop"
+             prism:ViewModelLocator.AutoWireViewModel="True"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Border Padding="3" Grid.Column="0">
+                <StackPanel  Orientation="Vertical">
+                    <TextBlock VerticalAlignment="Center">
+                <Run Text="Equity" FontWeight="Bold" />
+                    </TextBlock>
+                    <TextBlock VerticalAlignment="Center">
+                <Run Text="Total Number" />
+                    </TextBlock>
+                    <TextBox x:Name="EqtyTotalStockTextBox"
+                                Text="{Binding Fund.EquityTotalNumber, Mode=OneWay}"
+                                Width="50"
+                                Margin="2" AutomationProperties.AutomationId="EqtyTotalStockText"/>
+                    <TextBlock VerticalAlignment="Center">
+                <Run Text="Total Stock Weight" />
+                    </TextBlock>
+                    <TextBox x:Name="EqtyTotalStockWeightTextBox"
+                                Text="{Binding Fund.EquityTotalStockWeight, Mode=OneWay}"
+                                Width="50"
+                                Margin="2" AutomationProperties.AutomationId="EqtyTotalStockWeightText"/>
+                    <TextBlock VerticalAlignment="Center">
+                <Run Text="Total Market Value" />
+                    </TextBlock>
+                    <TextBox x:Name="EqtyTotalMarketValueTextBox"
+                                Text="{Binding Fund.EquityTotalMarketValue, Mode=OneWay}"
+                                Width="50"
+                                Margin="2" AutomationProperties.AutomationId="EqtyTotalMarketValueText"/>
+                </StackPanel>
+            </Border>
+            <Border Padding="3" Grid.Column="1">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock VerticalAlignment="Center">
+                <Run Text="Bond" FontWeight="Bold" />
+                    </TextBlock>
+                    <TextBlock VerticalAlignment="Center">
+                <Run Text="Total Number" />
+                    </TextBlock>
+                    <TextBox x:Name="BondTotalStockTextBox"
+                                Text="{Binding Fund.BondTotalNumber, Mode=OneWay}"
+                                Width="50"
+                                Margin="2" AutomationProperties.AutomationId="BondTotalStockText"/>
+                    <TextBlock VerticalAlignment="Center">
+                <Run Text="Total Stock Weight" />
+                    </TextBlock>
+                    <TextBox x:Name="BondTotalStockWeightTextBox"
+                                Text="{Binding Fund.BondTotalStockWeight, Mode=OneWay}"
+                                Width="50"
+                                Margin="2" AutomationProperties.AutomationId="BondTotalStockWeightText"/>
+                    <TextBlock VerticalAlignment="Center">
+                <Run Text="Total Market Value" />
+                    </TextBlock>
+                    <TextBox x:Name="BondTotalMarketValueTextBox"
+                                Text="{Binding Fund.BondTotalMarketValue, Mode=OneWay}"
+                                Width="50"
+                                Margin="2" AutomationProperties.AutomationId="BondTotalMarketValueText"/>
+                </StackPanel>
+            </Border>
+        </Grid>
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+            <TextBlock VerticalAlignment="Center">
+                <Run Text="All" FontWeight="Bold" />
+            </TextBlock>
+            <TextBlock VerticalAlignment="Center">
+                <Run Text="Total Number" />
+            </TextBlock>
+            <TextBox x:Name="AllTotalStockTextBox"
+                                Text="{Binding Fund.StockTotalNumber, Mode=OneWay}"
+                                Width="50"
+                                Margin="2" AutomationProperties.AutomationId="StockTotalStockText"/>
+            <TextBlock VerticalAlignment="Center">
+                <Run Text="Total Stock Weight" />
+            </TextBlock>
+            <TextBox x:Name="AllTotalStockWeightTextBox"
+                                Text="{Binding Fund.StockTotalStockWeight, Mode=OneWay}"
+                                Width="50"
+                                Margin="2" AutomationProperties.AutomationId="StockTotalStockWeightText"/>
+            <TextBlock VerticalAlignment="Center">
+                <Run Text="Total Market Value" />
+            </TextBlock>
+            <TextBox x:Name="AllTotalMarketValueTextBox"
+                                Text="{Binding Fund.StockTotalMarketValue, Mode=OneWay}"
+                                Width="50"
+                                Margin="2" AutomationProperties.AutomationId="StockTotalMarketValueText"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
